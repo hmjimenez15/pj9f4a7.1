@@ -14,6 +14,7 @@
 			}
 		}
 		echo "El preu és $pvp € (IVA inclòs)<br>";
+		echo '<a href=pizza.html>Torna a pizza.html</a>';
 		exit(0);
 	}
 ?>
