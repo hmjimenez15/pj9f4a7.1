@@ -1,11 +1,11 @@
 <?php
 	$preu = 10;
+	$IVA=21;
 	if (empty($_GET['ingr'])) {
-		echo "Has demanat només la pizza bàsica. El preu és $preu € (IVA inclòs)<br>";
-		exit(0);
+		$pvp=((100+$IVA)/100)*$preu;
+		echo "Has demanat només la pizza bàsica. El preu és $pvp € (IVA inclòs)<br>";
 	}
 	else {
-		$IVA=21;
 		$pvp=((100+$IVA)/100)*($preu+count($_GET['ingr']));
 		echo "Has demanat la pizza bàsica amb:<br> ";
 		foreach ($_GET['ingr'] as $ingredient) {
@@ -14,7 +14,6 @@
 			}
 		}
 		echo "El preu és $pvp € (IVA inclòs)<br>";
-		echo '<a href=pizza.html>Torna a pizza.html</a>';
-		exit(0);
 	}
+	echo '<a href=pizza.html>Torna a pizza.html</a>';
 ?>
